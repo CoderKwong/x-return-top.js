@@ -22,7 +22,7 @@ x-return-top
  - Live Demo 1: [http://50vip.com](http://50vip.com)
  - Live Demo 2: [http://www.atool.com](http://www.atool.com)
  - 项目代码中的index.html
-
+![](https://raw.githubusercontent.com/hustcc/x-return-top.js/master/screenshot/shot.gif)
 
 ## TODO ##
 

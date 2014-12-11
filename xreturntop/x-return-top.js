@@ -11,7 +11,7 @@ var xReturnTopBox = null; //子节点
 
 //x-return-top.js执行方法
 function xReturnTop(id, options) {
-    opt = options
+    opt = options;
     xReturnTopEle = document.getElementById(id);
     
     __createReturnTopHtml();

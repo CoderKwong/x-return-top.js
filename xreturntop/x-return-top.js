@@ -6,16 +6,17 @@
 */
 var opt = {}; //配置
 var __returnTopInterval = null; //动画定时器
-var xReturnTopEle = null; //节点
-var xReturnTopBox = null; //子节点
+var xEle = null; //节点
+var xBox = null; //子节点
 
 //x-return-top.js执行方法
 function xReturnTop(id, options) {
     opt = options;
-    xReturnTopEle = document.getElementById(id);
+    xEle = document.getElementById(id);
     
-    __createReturnTopHtml();
-    
+    __addHtml();
+    __addCss();
+    //防止屏蔽已有的事件
     var oldOnscroll = window.onscroll;
     window.onscroll = function () {
         if(typeof oldOnscroll == 'function'){
@@ -23,21 +24,21 @@ function xReturnTop(id, options) {
         }
         __onWindowScroll();
     }; //卷动事件
-    xReturnTopEle.onclick = __animateReturnTop; //点击
-    xReturnTopBox.onmouseover = __onBoxMouseOver; //鼠标
-    xReturnTopBox.onmouseout = __onBoxMouseOut;
+    xEle.onclick = __animateReturnTop; //点击
+    xBox.onmouseover = __onBoxMouseOver; //鼠标
+    xBox.onmouseout = __onBoxMouseOut;
 }
 
 function __getOption(key) {
-    //TODO
+    return opt[key] || '';
 }
 
 function __onBoxMouseOut() {
-    xReturnTopBox.style.width = '36px';
+    xBox.style.width = '36px';
 }
 
 function __onBoxMouseOver() {
-    xReturnTopBox.style.width = '100px';
+    xBox.style.width = '100px';
 }
 
 function __getScrollTopOffset() {
@@ -54,21 +55,12 @@ function __setScrollTopOffset(value) {
 }
 
 function __animateHideXReturnTop() {
-    xReturnTopBox.style.bottom = '-60px';
+    xBox.style.bottom = '-60px';
 }
 
 //显示按钮动画
 function __animateShowXReturnTop() {
-    xReturnTopBox.style.bottom = '200px';
-}
-
-function __setScrollTopOffset(value) {
-    if (document.body && document.body.scrollTop) {
-        document.body.scrollTop = value
-    }
-    if (document.documentElement && document.documentElement.scrollTop) {
-        document.documentElement.scrollTop = value
-    }
+    xBox.style.bottom = '200px';
 }
 
 function __scrollMove() {
@@ -87,24 +79,25 @@ function __onWindowScroll() {
     if (__returnTopInterval == null) __getScrollTopOffset() > 5 ? __animateShowXReturnTop() : __animateHideXReturnTop();
 }
 
-function __createReturnTopHtml() {
-    xReturnTopBox = document.createElement("div");
-    xReturnTopBox.className = "box";
-    xReturnTopBox.style.overflow = "hidden";
+function __addHtml() {
+    xBox = document.createElement("div");
+    xBox.className = "box";
+    xBox.style.overflow = "hidden";
     
-    var xReturnTopA = document.createElement("a");
-    xReturnTopA.href = "javascript:void(0)";
+    var xA = document.createElement("a");
+    xA.href = "javascript:void(0)";
         
-    var xReturnTopSpan = document.createElement("span");
-    var spanText = document.createTextNode("返回顶部");
-    xReturnTopSpan.appendChild(spanText);
+    var xSpan = document.createElement("span");
+    xSpan.appendChild(document.createTextNode("返回顶部"));
         
-    xReturnTopBox.appendChild(xReturnTopA);
-    xReturnTopBox.appendChild(xReturnTopSpan);
+    xBox.appendChild(xA);
+    xBox.appendChild(xSpan);
         
-    xReturnTopEle.appendChild(xReturnTopBox);
+    xEle.appendChild(xBox);
 }
 
-function __createCss() {
-    //TODO
+function __addCss() {
+    xCss = document.createElement("style");
+    xCss.appendChild(document.createTextNode("#xReturnTop{font-size:12px;position:fixed;}#xReturnTop .box,#xReturnTop .box a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:36px;height:36px;display:block;}#xReturnTop .box{transition:0.3s;position:fixed;left:80%;bottom:-60px;background:url(" + __getOption('path') + "returnBgX.png) repeat;cursor:pointer;}#xReturnTop .box a{float:left;background:url(" + __getOption('path') + "returnTopIco.gif) no-repeat 11px 10px;}#xReturnTop .box a:hover{background-color:#6e6e6e;}#xReturnTop .box span{float:left;line-height:36px;color:#e6e6e6;margin-left:6px;}"));
+    document.getElementsByTagName('head')[0].appendChild(xCss);
 }

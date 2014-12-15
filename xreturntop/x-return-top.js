@@ -98,6 +98,6 @@ function __addHtml() {
 
 function __addCss() {
     xCss = document.createElement("style");
-    xCss.appendChild(document.createTextNode("#xReturnTop{font-size:12px;position:fixed;}#xReturnTop .box,#xReturnTop .box a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:36px;height:36px;display:block;}#xReturnTop .box{transition:0.3s;position:fixed;left:80%;bottom:-60px;background:url(" + __getOption('path') + "returnBgX.png) repeat;cursor:pointer;}#xReturnTop .box a{float:left;background:url(" + __getOption('path') + "returnTopIco.gif) no-repeat 11px 10px;}#xReturnTop .box a:hover{background-color:#6e6e6e;}#xReturnTop .box span{float:left;line-height:36px;color:#e6e6e6;margin-left:6px;}"));
+    xCss.appendChild(document.createTextNode("#xReturnTop{font-size:12px;position:fixed;}#xReturnTop .box,#xReturnTop .box a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:36px;height:36px;display:block;}#xReturnTop .box{transition:0.3s;position:fixed;left:80%;bottom:-60px;background:url(" + __getOption('path') + "returnBgX.png) repeat;cursor:pointer;}#xReturnTop .box a{float:left;background:url(" + __getOption('path') + "returnTopIco.png) no-repeat 11px 10px;}#xReturnTop .box a:hover{background-color:#6e6e6e;}#xReturnTop .box span{float:left;line-height:36px;color:#e6e6e6;margin-left:6px;}"));
     document.getElementsByTagName('head')[0].appendChild(xCss);
 }

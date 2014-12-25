@@ -60,7 +60,7 @@ function __animateHideXReturnTop() {
 
 //显示按钮动画
 function __animateShowXReturnTop() {
-    xBox.style.bottom = '200px';
+    xBox.style.bottom = '15%';
 }
 
 function __scrollMove() {

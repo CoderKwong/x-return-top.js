@@ -46,7 +46,7 @@ function __getScrollTopOffset() {
 }
 
 function __setScrollTopOffset(value) {
-	if (document.body && document.body.scrollTop) {
+    if (document.body && document.body.scrollTop) {
         document.body.scrollTop = value;
     }
     if (document.documentElement && document.documentElement.scrollTop) {
@@ -81,7 +81,6 @@ function __onWindowScroll() {
 
 function __addHtml() {
     xBox = document.createElement("div");
-//    xBox.className = "box";
     xBox.style.overflow = "hidden";
     
     var xA = document.createElement("a");
@@ -98,6 +97,6 @@ function __addHtml() {
 
 function __addCss() {
     xCss = document.createElement("style");
-    xCss.appendChild(document.createTextNode("#xReturnTop{font-size:12px;position:fixed;}#xReturnTop div,#xReturnTop div a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:36px;height:36px;display:block;}#xReturnTop div{transition:0.3s;position:fixed;left:80%;bottom:-60px;background:url(" + __getOption('path') + "returnBgX.png) repeat;cursor:pointer;}#xReturnTop div a{float:left;background:url(" + __getOption('path') + "returnTopIco.png) no-repeat 11px 10px;}#xReturnTop div a:hover{background-color:#6e6e6e;}#xReturnTop div span{float:left;line-height:36px;color:#e6e6e6;margin-left:6px;}"));
+    xCss.appendChild(document.createTextNode("#xReturnTop{font-size:12px;position:fixed;}#xReturnTop div,#xReturnTop div a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:36px;height:36px;display:block;}#xReturnTop div{transition:0.3s;position:fixed;left:80%;bottom:-60px;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkAQMAAADbzgrbAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURQAAAKd6PdoAAAABdFJOU1wiO8W5AAAADElEQVQI12NgGJ4AAADYAAHoUyD/AAAAAElFTkSuQmCC') repeat;cursor:pointer;}#xReturnTop div a{float:left;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAARAQMAAAA4xGTiAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURQAAAP///6XZn90AAAABdFJOUwBA5thmAAAAJ0lEQVQI12P4/48BiCCAkYGBuYGB/QAD/wMG+Q8M9j8Y6v+AuKgIAH0DDqBH4KCCAAAAAElFTkSuQmCC') no-repeat 11px 10px;}#xReturnTop div a:hover{background-color:#6e6e6e;}#xReturnTop div span{float:left;line-height:36px;color:#e6e6e6;margin-left:6px;}"));
     document.getElementsByTagName('head')[0].appendChild(xCss);
 }

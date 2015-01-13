@@ -9,6 +9,18 @@ x-return-top
 
 然而，如果你的网页中没有使用jquery，那么如果要使用这些插件，就必须为了这一个很小的功能，加上jquery，对于网页的加载速度非常不划算。
 
+## 使用 ##
+
+    <!-- add lib src in any place before div#xReturnTop -->
+	<script type="text/javascript" src="xreturntop/x-return-top.min.js"></script>
+
+	<!-- your code -->
+
+	<!-- div and render code, add to any place behind javascript lib -->
+	<div id="xReturnTop"></div>
+	<script type="text/javascript"> xReturnTop('xReturnTop'); </script>
+
+
 ## 说明 ##
 
 - git上大部分的“返回顶部”项目都是基于jquery，使用前必须应用jquery

@@ -11,26 +11,34 @@ x-return-top
 
 ## 使用 ##
 
-    <!-- add lib src in any place before div#xReturnTop -->
+使用非常简单，如下所示，放到Body之间即可，切勿放到head中。
+
 	<script type="text/javascript" src="xreturntop/x-return-top.min.js"></script>
 
-	<!-- your code -->
+## 配置项
 
-	<!-- div and render code, add to any place behind javascript lib -->
-	<div id="xReturnTop"></div>
-	<script type="text/javascript"> xReturnTop('xReturnTop'); </script>
+ - `left`: 位置定位左侧, 默认: `'80%'` 
+ - `bottom`: 位置定位右侧, 默认: `15%`
+ - `text`: 显示的文本内容, 默认: `Back Top`
 
+例如：
+
+	<script type="text/javascript" left="80%" bottom="20%" text="返回顶部" src="xreturntop/x-return-top.min.js"></script>
+
+	或者直接使用CDN
+	<script type="text/javascript" left="80%" bottom="20%" text="返回顶部" src="http://github.atool.org/x-return-top.min.js"></script>
 
 ## 说明 ##
 
 - git上大部分的“返回顶部”项目都是基于jquery，使用前必须应用jquery
 - git上部分纯javascript实现的“返回顶部”，无动画，不美观
 - 本项目使用纯javascript，实现动画，美观且不影响网页加载速度，不依赖任何js框架
-- 压缩之后2.6kb（变量混淆会更小，为了保持可读未做混淆）
+- 压缩之后2.26kb
 - 集成非常简单
 - 使用部分css3动画，所以兼容性你懂的（但是不会影响使用，后续会改为js动画）
 - css使用js动态加载，集成更方便，且不影响网页加载速度
 - 图片使用base64加载，不会增加http请求数
+- 提供cdn地址：[http://github.atool.org/x-return-top.min.js](http://github.atool.org/x-return-top.min.js)
 
 ## Demo ##
 
@@ -39,8 +47,5 @@ x-return-top
  - 项目代码中的index.html
 ![](https://raw.githubusercontent.com/hustcc/x-return-top.js/master/screenshot/shot.gif)
 
-## TODO ##
-
-- 增加自定义配置
 
 

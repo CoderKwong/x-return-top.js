@@ -25,7 +25,9 @@ x-return-top
 
 	<script type="text/javascript" left="80%" bottom="20%" text="返回顶部" src="xreturntop/x-return-top.min.js"></script>
 
-	或者直接使用CDN
+或者直接使用CDN
+
+
 	<script type="text/javascript" left="80%" bottom="20%" text="返回顶部" src="http://github.atool.org/x-return-top.min.js"></script>
 
 ## 说明 ##

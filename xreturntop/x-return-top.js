@@ -37,8 +37,8 @@
         opt = {
             l: __getAttr(script, "left", '80%'),
             b: __getAttr(script, "bottom", '15%'),
-            t: __getAttr(script, "text", 'Back Top'),
-        };
+            t: __getAttr(script, "text", 'Back Top')
+        }
     }
 
     function __onBoxMouseOut() {
@@ -119,9 +119,10 @@
     }
 
     function __addCss() {
-        var xCss = __createNonde("style");
-        __append(xCss, __createText("#xReturnTop{font-size:12px;position:fixed;}#xReturnTop div,#xReturnTop div a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:36px;height:36px;display:block;}#xReturnTop div{transition:0.3s;position:fixed;left:"+opt.l+";bottom:-60px;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkAQMAAADbzgrbAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURQAAAKd6PdoAAAABdFJOU1wiO8W5AAAADElEQVQI12NgGJ4AAADYAAHoUyD/AAAAAElFTkSuQmCC') repeat;cursor:pointer;}#xReturnTop div a{float:left;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAARAQMAAAA4xGTiAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURQAAAP///6XZn90AAAABdFJOUwBA5thmAAAAJ0lEQVQI12P4/48BiCCAkYGBuYGB/QAD/wMG+Q8M9j8Y6v+AuKgIAH0DDqBH4KCCAAAAAElFTkSuQmCC') no-repeat 11px 10px;}#xReturnTop div a:hover{background-color:#6e6e6e;}#xReturnTop div span{float:left;line-height:36px;color:#e6e6e6;margin-left:6px;}"))
-        __append(__getElesByTag('head')[0], xCss);
+        var x = document.createElement("div"),
+        cssStr = "#xReturnTop{font-size:12px;position:fixed;}#xReturnTop div,#xReturnTop div a{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;width:36px;height:36px;display:block;}#xReturnTop div{transition:0.3s;position:fixed;left:"+opt.l+";bottom:-60px;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkAQMAAADbzgrbAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURQAAAKd6PdoAAAABdFJOU1wiO8W5AAAADElEQVQI12NgGJ4AAADYAAHoUyD/AAAAAElFTkSuQmCC') repeat;cursor:pointer;}#xReturnTop div a{float:left;background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAARAQMAAAA4xGTiAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURQAAAP///6XZn90AAAABdFJOUwBA5thmAAAAJ0lEQVQI12P4/48BiCCAkYGBuYGB/QAD/wMG+Q8M9j8Y6v+AuKgIAH0DDqBH4KCCAAAAAElFTkSuQmCC') no-repeat 11px 10px;}#xReturnTop div a:hover{background-color:#6e6e6e;}#xReturnTop div span{float:left;line-height:36px;color:#e6e6e6;margin-left:6px;}";
+        x.innerHTML = "x<style>"+cssStr+"</style>";
+        __append(__getElesByTag("head")[0], x.lastChild);
     }
     xReturnTop();
 }()
